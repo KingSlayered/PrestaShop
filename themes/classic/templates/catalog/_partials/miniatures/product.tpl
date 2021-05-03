@@ -29,21 +29,21 @@
       {block name='product_thumbnail'}
         {if $product.cover}
           <a href="{$product.url}" class="thumbnail product-thumbnail">
-            <img
+            <img loading="lazy"
               src="{$product.cover.bySize.home_default.url}"
               alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
               loading="lazy"
               data-full-size-image-url="{$product.cover.large.url}"
-              width="250"
+              width="{$urls.no_picture_image.bySize.home_default.width}"
               height="250"
             />
           </a>
         {else}
           <a href="{$product.url}" class="thumbnail product-thumbnail">
-            <img
+            <img loading="lazy"
               src="{$urls.no_picture_image.bySize.home_default.url}"
               loading="lazy"
-              width="250"
+              width="{$urls.no_picture_image.bySize.home_default.width}"
               height="250"
             />
           </a>
